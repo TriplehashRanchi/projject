@@ -6,7 +6,7 @@
 
   &--left {
     grid-column: balloon-l-start / balloon-l-end;
-    animation: balloon-move 4s linear 0s infinite;
+    animation: balloon-move 2s linear 0s infinite;
     @media (max-width: 800px) {
       margin-left: -25%;
     }
@@ -19,7 +19,7 @@
   &--right {
     grid-column: balloon-r-start / balloon-r-end;
     margin-left: -20%;
-    animation: balloon-move 4s linear 0s infinite reverse;
+    animation: balloon-move 2s linear 0s infinite reverse;
     @media (max-width: 800px) {
       margin-left: 25%;
     }
@@ -190,7 +190,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  animation: heart-beat 2s linear 0s infinite alternate;
+  animation: heart-beat 1s linear 0s infinite alternate;
 }
 
 .btn-ref {
@@ -318,19 +318,19 @@
   height: 40%;
 }
 .fuego:nth-child(1) {
-  animation: fuego 2s 6.5s infinite;
-}
-.fuego:nth-child(2) {
-  animation: fuego 1.5s 6.5s infinite;
-}
-.fuego:nth-child(3) {
   animation: fuego 1s 6.5s infinite;
 }
-.fuego:nth-child(4) {
+.fuego:nth-child(2) {
+  animation: fuego 0.75s 6.5s infinite;
+}
+.fuego:nth-child(3) {
   animation: fuego 0.5s 6.5s infinite;
 }
+.fuego:nth-child(4) {
+  animation: fuego 0.25s 6.5s infinite;
+}
 .fuego:nth-child(5) {
-  animation: fuego 0.2s 6.5s infinite;
+  animation: fuego 0.1s 6.5s infinite;
 }
 
 /* Animation Fire */
