@@ -35,14 +35,14 @@ const readMsg = (text) => {
   for (let i = 0; i < text.length; i++) {
     // this loop goes through all the text msg paras
     setTimeout(() => {
-      // A timeout of 2.5s is applied to all text elements so that they appear successively one after the other
+      // A timeout of 3s is applied to all text elements so that they appear successively one after the other
       text[i].classList.add("read"); // this adds a fadeIn-fadeOut animation to elements
       if (i === text.length - 1) {
         // this ensures that the button appears only after the last text is displayed.
         button.style.display = "inline-block";
         CTAtext.style.display = "block";
       }
-    }, 2500 * i);
+    }, 3000 * i); // Increased from 2500 to 3000
   }
 };
 
@@ -84,7 +84,7 @@ export const animate = function () {
         button.classList.remove("switch");
         darkroom.style.display = "none";
         readMsg(roomText);
-      }, 2000); // Reduced from 4000 to 2000
+      }, 3000); // Increased from 2000 to 3000
     } else if (button.classList.contains("door-out")) {
       /* 
               When the door is pressed, the scene changes to the cemetery. Again, the msg will be displayed, after 
@@ -100,7 +100,7 @@ export const animate = function () {
         button.classList.remove("door-out");
         room.style.display = "none";
         readMsg(hallText);
-      }, 2000); // Reduced from 4000 to 2000
+      }, 3000); // Increased from 2000 to 3000
     } else if (button.classList.contains("door-in")) {
       /* 
               When the door is pressed, the scene changes to the gift room. Again, the msg will be displayed, after 
@@ -115,7 +115,7 @@ export const animate = function () {
         button.classList.remove("door-in");
         hallway.style.display = "none";
         readMsg(giftText);
-      }, 2000); // Reduced from 4000 to 2000
+      }, 3000); // Increased from 2000 to 3000
     } else if (button.classList.contains("gift")) {
       /* 
               When the gift is pressed, the gift scene vanishes and the white div fades slowly giving a sense 
@@ -159,7 +159,7 @@ export const animate = function () {
       setTimeout(() => {
         msg.style.transform = "translateY(-100%)";
         flash.style.display = "none";
-      }, 2500); // Reduced from 5000 to 2500
+      }, 4000); // Increased from 2500 to 4000
 
       setTimeout(() => {
         msgWindow.classList.add("fade-in");
