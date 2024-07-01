@@ -119,11 +119,7 @@ const setRemoteData = async () => {
       } catch (e) {
         // Telegraph is down, fallback to GitHub
         console.error("Telegraph is down, using GitHub backup");
-        const repoOwner = "TriplehashRanchi";  // Replace with your GitHub username
-        const repoName = "projject";  // Replace with your repository name
-        const filePath = msgPath;  // Path to the file in the repository
-
-        const url = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/${filePath}`;
+        const url = `https://raw.githubusercontent.com/TriplehashRanchi/projject/main/file.txt`;
         res = await axios.get(url);
         const text = res.data;
         markup = generateMarkupLocal(text);
@@ -139,4 +135,5 @@ const setRemoteData = async () => {
 if (process.argv[2] === "--local") setLocalData();
 else if (process.argv[2] === "--remote") setRemoteData();
 else console.log("Fetch mode not specified.");
+
 
