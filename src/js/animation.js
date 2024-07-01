@@ -7,7 +7,7 @@ const button = document.querySelector(".btn"),
   room = document.querySelector(".empty-room"),
   flash = document.querySelector(".flash");
 
-// These are the text elements that hold messages to be displayed in the respective scenes
+// These are the text elements that hold messages to be displayed in the respective screes
 
 const blackText = document.querySelectorAll(".bb-text"), // msgs in the dark room scene
   giftText = document.querySelectorAll(".gift-text"), // msgs in the gift scene
@@ -18,7 +18,7 @@ const blackText = document.querySelectorAll(".bb-text"), // msgs in the dark roo
 //Elements in the card page
 
 const frames = document.querySelectorAll(".frame"),
-  msgWindow = document.querySelector(".scroll"), // this one has the message frame in [0] and card frame in [1]
+  msgWindow = document.querySelector(".scroll"), // this one has the message frame in [0] and card fram in [1]
   msg = document.querySelector(".text"); // the Message para
 
 //Sfx files
@@ -35,14 +35,14 @@ const readMsg = (text) => {
   for (let i = 0; i < text.length; i++) {
     // this loop goes through all the text msg paras
     setTimeout(() => {
-      // A timeout of 3s is applied to all text elements so that they appear successively one after the other
+      // A timeout of 5s ia applied to all text elements so that appear successively one after the other
       text[i].classList.add("read"); // this adds a fadeIn-fadeOut animation to elements
       if (i === text.length - 1) {
         // this ensures that the button appears only after the last text is displayed.
         button.style.display = "inline-block";
         CTAtext.style.display = "block";
       }
-    }, 3000 * i); // Increased from 2500 to 3000
+    }, 5000 * i);
   }
 };
 
@@ -59,7 +59,7 @@ const transition = (currentScene) => {
 
 /*
     In the beginning, the black page appears signifying a dark room and after displaying the msg paras
-    one by one, a button(bulb) appears and the user is asked to click the button to switch on the lights.
+    one by one, a button(bulb) appears and the user is asked to click the button to swith on the lights.
 */
 
 export const animate = function () {
@@ -70,7 +70,7 @@ export const animate = function () {
   button.addEventListener("click", function () {
     if (button.classList.contains("switch")) {
       /* 
-              When the switch is pressed, the black div will wipe out and the background scene with no 
+              When the switch is pressed, the black div will wipe out and the backgroung scene with no 
               elements will appear, signifying that the lights are turned on and the room is empty. Then 
               the msg will be displayed after which, the user will be asked to move out and the button with
               door icon will appear. 
@@ -84,11 +84,11 @@ export const animate = function () {
         button.classList.remove("switch");
         darkroom.style.display = "none";
         readMsg(roomText);
-      }, 3000); // Increased from 2000 to 3000
+      }, 4000);
     } else if (button.classList.contains("door-out")) {
       /* 
-              When the door is pressed, the scene changes to the cemetery. Again, the msg will be displayed, after 
-              which, the user will be asked to come inside and the button with the door will appear again.
+              when the door is pressed, scene changes to cemetry. Again, the msg will be displayed, after 
+              which, the user will be asked to come inside and the button with door will appear again.
           */
 
       door.play();
@@ -100,11 +100,11 @@ export const animate = function () {
         button.classList.remove("door-out");
         room.style.display = "none";
         readMsg(hallText);
-      }, 3000); // Increased from 2000 to 3000
+      }, 4000);
     } else if (button.classList.contains("door-in")) {
       /* 
-              When the door is pressed, the scene changes to the gift room. Again, the msg will be displayed, after 
-              which, the user will be asked to open the gift and the button with the gift will appear.
+              when the door is pressed, scene changes to the gift room. Again, the msg will be displayed, after 
+              which, the user will be asked to open the gift and the button with gift will appear.
           */
 
       door.play();
@@ -115,10 +115,10 @@ export const animate = function () {
         button.classList.remove("door-in");
         hallway.style.display = "none";
         readMsg(giftText);
-      }, 3000); // Increased from 2000 to 3000
+      }, 4000);
     } else if (button.classList.contains("gift")) {
       /* 
-              When the gift is pressed, the gift scene vanishes and the white div fades slowly giving a sense 
+              when the gift is pressed, the gift scene vanishes and the white div fades slowly giving a sense 
               of explosion. After that, the message frame appears and moves up until the message completes. Then,
               the message frame fades away and the card appears.
           */
@@ -140,7 +140,7 @@ export const animate = function () {
         return;
       }
 
-      // This value is stored in the --readTime css variable of the root element and is calculated dynamically at build time.
+      //This value is stored in the --readTime css variable of root element and is calculated dynamically at build time.
       const readTime =
         parseInt(
           getComputedStyle(document.documentElement).getPropertyValue(
@@ -159,7 +159,7 @@ export const animate = function () {
       setTimeout(() => {
         msg.style.transform = "translateY(-100%)";
         flash.style.display = "none";
-      }, 4000); // Increased from 2500 to 4000
+      }, 5000);
 
       setTimeout(() => {
         msgWindow.classList.add("fade-in");

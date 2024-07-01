@@ -12,7 +12,7 @@ const genIndex = function (markup) {
   if (markup.length) {
     readTime = (markup.split(" ").length / 200) * 60;
     readVar = `<style>:root{
-      --readTime: ${Math.round(readTime) + 15}s;
+      --readTime: ${Math.round(readTime) + 5}s;
     }</style>`;
   }
 
