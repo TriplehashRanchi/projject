@@ -11,15 +11,12 @@
   0% {
     opacity: 0;
   }
-
   25% {
     opacity: 1;
   }
-
   75% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
@@ -29,11 +26,9 @@
   0% {
     transform: translate(-50%, -50%) scale(1, 1);
   }
-
   50% {
     transform: translate(-50%, -50%) scale(1.25, 1.25);
   }
-
   100% {
     transform: translate(-50%, -50%) scale(1, 1);
   }
@@ -61,29 +56,28 @@
   0% {
     transform: translateY(0);
   }
-
   100% {
     transform: translateY(-100%);
   }
 }
 
 // Dynamic Classes
-
 .hidden {
   display: none;
 }
+
 .fade-in {
-  animation: fade 1s ease-in 0s;
+  animation: fade 0.5s ease-in 0s;
 }
 
 .appear {
-  animation: fade 1s linear 0s 0.5 reverse;
+  animation: fade 0.5s linear 0s 0.5 reverse;
 }
 
 .read {
-  animation: read 2s linear 0s;
+  animation: read 1s linear 0s;
 }
 
 .move-up {
-  animation: move-up var(--readTime) linear 1.5s;
+  animation: move-up var(--readTime) linear 1s;
 }
