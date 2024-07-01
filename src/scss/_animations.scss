@@ -73,17 +73,17 @@
   display: none;
 }
 .fade-in {
-  animation: fade 2s ease-in 0s;
+  animation: fade 1s ease-in 0s;
 }
 
 .appear {
-  animation: fade 2s linear 0s 1 reverse;
+  animation: fade 1s linear 0s 0.5 reverse;
 }
 
 .read {
-  animation: read 4s linear 0s;
+  animation: read 2s linear 0s;
 }
 
 .move-up {
-  animation: move-up var(--readTime) linear 3s;
+  animation: move-up var(--readTime) linear 1.5s;
 }
