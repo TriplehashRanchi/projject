@@ -42,7 +42,7 @@ const readMsg = (text) => {
         button.style.display = "inline-block";
         CTAtext.style.display = "block";
       }
-    }, 5000 * i);
+    }, 7000 * i);
   }
 };
 
